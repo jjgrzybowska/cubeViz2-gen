@@ -1177,6 +1177,7 @@ if (jsonFileName) {
 }
 
 getJSON(jsonFileName, function (e, cvdR) {
+  console.log(cvdR)
   if (cvdR.Right) {
     // const sesionTy = "immersive-vr"
     if (window.embedMode) {
