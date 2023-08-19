@@ -14,18 +14,35 @@ export const api = {
     } else {
     }
 
-    return {
+    const w = {
       loadDiagram: function (diagramData) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           load(diagramData, this);
+          window.requestAnimationFrame(this.step);
           console.log("Loading diagram data:", diagramData);
           resolve("Diagram loaded successfully");
         });
       },
+      draw: null,
       webGlResources: {
         canvas: canvas,
         gl: gl,
       },
+      viewport: {
+        vpScale: 1.0,
+        vpAlpha: 0,
+        vpBeta: 0,
+        vpGamma: 0,
+      },
+      fN: 0,
     };
+    w.step = function (timestamp, frame) {
+      w.fN++;
+      w.draw(timestamp, frame);
+      if (!window.stopStep) {
+        window.requestAnimationFrame(w.step);
+      }
+    }
+    return w
   },
 };

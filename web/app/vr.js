@@ -14,6 +14,11 @@ xhr.onload = function() {
     console.log('File contents:', xhr.responseText);
     const cv = api.init(domEl , {});
     cv.loadDiagram(JSON.parse(xhr.responseText));
+    //rotate test
+   // cv.viewport.vpScale = 0.5;
+  //  cv.viewport.vpGamma = Math.random();
+  //  cv.viewport.vpBeta = Math.random();
+
   } else {
     console.error('Request failed:', xhr.status, xhr.statusText);
   }
