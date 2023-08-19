@@ -28,6 +28,7 @@ export function main(cvd, session, refSpace) {
         vsCodeView,
         fsCodeView,
     ]);
+
     gl.useProgram(program);
     const uLoc = {};
     const aLoc = {};
@@ -284,6 +285,7 @@ export function main(cvd, session, refSpace) {
         );
         gl.enableVertexAttribArray(attrsC["vColor"]);
     };
+
 
     gl.useProgram(program);
     const initiated = cvd.webGlDescriptors.slice(0, 3).map(function (d) {
