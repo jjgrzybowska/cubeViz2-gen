@@ -1,5 +1,5 @@
 
-    var vs = `#version 300 es
+var vs = `#version 300 es
 
 in vec4 vPosition;
 in vec3 Normal;
