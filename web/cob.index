@@ -126,7 +126,7 @@
 <script src="shaders.js"></script>
 <script src="cursorShaders.js"></script>
 <script src="codeViewShaders.js"></script>
-<script src="vr.js"></script>
+<script src="bootstrap.js"></script>
 
 
 </body>
